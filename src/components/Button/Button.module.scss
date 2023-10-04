@@ -6,7 +6,7 @@
   padding: 9px 0px;
   border-radius: 4px;
   font-size: 1.6rem;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
   background-color: var(--white);
   border: 1px solid transparent;
@@ -37,6 +37,7 @@
 .rounded {
   border-radius: 999px;
   box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
+
   border-color: rgba(22, 24, 35, 0.12);
 
   &:hover {

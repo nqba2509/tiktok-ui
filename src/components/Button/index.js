@@ -1,6 +1,6 @@
 import classNames from "classnames/bind";
-import styles from "./Button.module.scss";
 import { Link } from "react-router-dom";
+import styles from "./Button.module.scss";
 
 const cx = classNames.bind(styles);
 
@@ -10,39 +10,49 @@ function Button({
   primary = false,
   outline = false,
   text = false,
-  disabled = false,
   rounded = false,
-  medium = false,
+  disabled = false,
+  small = false,
   large = false,
   children,
+  className,
   leftIcon,
   rightIcon,
   onClick,
   ...passProps
 }) {
-  let Comp = "button"; //Mặc định là thẻ <Button>
-  const props = { onClick, ...passProps }; // có props là 1 onCLick , ...passProps(tất cả các props pass vào)
+  let Comp = "button";
+  const props = {
+    onClick,
+    ...passProps,
+  };
 
+  // Remove event listener when btn is disabled
   if (disabled) {
-    delete props.onCLick;
+    Object.keys(props).forEach((key) => {
+      if (key.startsWith("on") && typeof props[key] === "function") {
+        delete props[key];
+      }
+    });
   }
 
   if (to) {
-    props.to = to; //props là to
-    Comp = Link; // khi props là to thì sẻ thành thẻ <Link>
+    props.to = to;
+    Comp = Link;
   } else if (href) {
-    props.href = href; //props là href
-    Comp = "a"; // khi props là href thì sẻ thành thẻ <a>
+    props.href = href;
+    Comp = "a";
   }
 
   const classes = cx("wrapper", {
+    [className]: className,
     primary,
     outline,
     text,
-    rounded,
     disabled,
+    rounded,
+    small,
     large,
-    medium,
   });
 
   return (
