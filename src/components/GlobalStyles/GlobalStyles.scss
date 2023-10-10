@@ -1,5 +1,4 @@
 @import "normalize.css";
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
 :root {
   --primary: #fe2c55;
@@ -22,7 +21,7 @@ html {
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: TiktokSans;
   font-size: 1.6rem;
   line-height: 1.5;
   text-rendering: optimizeSpeed;
@@ -36,9 +35,25 @@ input,
 }
 
 a[href] {
-  font-weight: 600;
+  font-size: 1.6rem;
   color: var(--text-color);
   text-decoration: none;
+}
+
+@font-face {
+  font-family: "TiktokSans";
+  src: url(../../fonts/TikTokSans/TikTokDisplay-Regular.otf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "TiktokSans";
+  src: url(../../fonts/TikTokSans/TikTokDisplay-Medium.otf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: "TiktokSans";
+  src: url(../../fonts/TikTokSans/TikTokDisplay-Bold.otf);
+  font-weight: 600;
 }
 
 //Custom tippy tooltip
