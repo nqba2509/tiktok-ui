@@ -59,7 +59,7 @@ function Menu({
                 }}
               />
             )}
-            {renderItems()}
+            <div className={cx('menu-scroll')}>{renderItems()}</div>
           </PopperWrapper>
         </div>
       )}

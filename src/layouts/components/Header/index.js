@@ -30,7 +30,7 @@ const cx = classNames.bind(styles);
 const MENU_ITEMS = [
   {
     icon: <FontAwesomeIcon icon={faEarthAsia} />,
-    title: "English",
+    title: "Language",
     children: {
       title: "Language",
       data: [
@@ -43,6 +43,61 @@ const MENU_ITEMS = [
           type: "language",
           code: "vn",
           title: "Tiếng Việt",
+        },
+        {
+          type: "language",
+          code: "cn",
+          title: "Chinese",
+        },
+        {
+          type: "language",
+          code: "kr",
+          title: "Korean",
+        },
+        {
+          type: "language",
+          code: "es",
+          title: "Spain",
+        },
+        {
+          type: "language",
+          code: "tr",
+          title: "Turkey",
+        },
+        {
+          type: "language",
+          code: "jp",
+          title: "Japan",
+        },
+        {
+          type: "language",
+          code: "ca",
+          title: "Canada",
+        },
+        {
+          type: "language",
+          code: "id",
+          title: "Indonesia",
+        },
+        {
+          type: "language",
+          code: "it",
+          title: "Italy",
+        },
+        {
+          type: "language",
+          code: "my",
+          title: "Malaysia",
+        },
+        {
+          type: "language",
+          code: "nz",
+          title: "New Zealand",
+        },
+        {
+          type: "language",
+          code: "th",
+          title: "Thailand",
         },
       ],
     },
@@ -60,7 +115,7 @@ const MENU_ITEMS = [
 
 function Header() {
   const currentUser = true;
-  
+
   //Handle Logic
   const handleMenuChange = (menuItem) => {
     switch (menuItem.type) {
@@ -100,7 +155,7 @@ function Header() {
     <header className={cx("wrapper")}>
       <div className={cx("inner")}>
         <div>
-          <Link to={routesConfig.home} className={cx('logo-link')}>
+          <Link to={routesConfig.home} className={cx("logo-link")}>
             <img src={images.logo} alt="Tiktok" />
           </Link>
         </div>

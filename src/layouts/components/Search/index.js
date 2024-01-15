@@ -65,6 +65,7 @@ function Search() {
 
   return (
     <HeadlessTippy
+      appendTo={() => document.body}
       interactive
       visible={showResult && searchResult.length > 0}
       render={(attrs) => (
@@ -98,7 +99,10 @@ function Search() {
           <FontAwesomeIcon className={cx("loading")} icon={faSpinner} />
         )}
 
-        <button className={cx("search-btn")} onMouseDown={(e) => e.preventDefault()}>
+        <button
+          className={cx("search-btn")}
+          onMouseDown={(e) => e.preventDefault()}
+        >
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </button>
       </div>
