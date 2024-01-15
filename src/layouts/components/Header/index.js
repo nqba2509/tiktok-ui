@@ -1,4 +1,3 @@
-import classNames from "classnames/bind";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCloudUpload,
@@ -14,13 +13,17 @@ import {
   faEnvelope,
   // faSignIn,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
+import classNames from "classnames/bind";
+
 import Button from "~/components/Button";
 import styles from "./Header.module.scss";
 import images from "~/assets/image";
 import Menu from "~/components/Popper/Menu";
 import Search from "../Search";
+import routesConfig from "~/config/routes";
 
 const cx = classNames.bind(styles);
 
@@ -57,7 +60,7 @@ const MENU_ITEMS = [
 
 function Header() {
   const currentUser = true;
-
+  
   //Handle Logic
   const handleMenuChange = (menuItem) => {
     switch (menuItem.type) {
@@ -97,7 +100,9 @@ function Header() {
     <header className={cx("wrapper")}>
       <div className={cx("inner")}>
         <div>
-          <img src={images.logo} alt="Tiktok" />
+          <Link to={routesConfig.home} className={cx('logo-link')}>
+            <img src={images.logo} alt="Tiktok" />
+          </Link>
         </div>
 
         <Search />
@@ -136,7 +141,7 @@ function Header() {
             {currentUser ? (
               <img
                 className={cx("user-avatar")}
-                src="https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-aiso/9af69780bdb9b1fc9c2382c00c0f42f0~c5_100x100.jpeg?x-expires=1696669200&x-signature=5ILx5g6935I%2BlEnK%2BB6SX98g2ho%3D"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNFNKRIlelCDL2fF-rzzxdy4vQVU6xMQ--OQ&usqp=CAU"
                 alt="avatar"
               ></img>
             ) : (
