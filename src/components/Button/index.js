@@ -1,4 +1,5 @@
 import classNames from "classnames/bind";
+import PropType from "prop-types";
 import { Link } from "react-router-dom";
 import styles from "./Button.module.scss";
 
@@ -63,5 +64,22 @@ function Button({
     </Comp>
   );
 }
+
+Button.propTypes = {
+  to: PropType.string,
+  href: PropType.string,
+  primary: PropType.bool,
+  outline: PropType.bool,
+  text: PropType.bool,
+  rounded: PropType.bool,
+  disabled: PropType.bool,
+  small: PropType.bool,
+  large: PropType.bool,
+  children: PropType.node.isRequired,
+  className: PropType.string,
+  leftIcon: PropType.node,
+  rightIcon: PropType.node,
+  onClick: PropType.func,
+};
 
 export default Button;
