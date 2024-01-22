@@ -24,6 +24,7 @@ import images from "~/assets/image";
 import Menu from "~/components/Popper/Menu";
 import Search from "../Search";
 import routesConfig from "~/config/routes";
+import Image from "~/components/Image";
 
 const cx = classNames.bind(styles);
 
@@ -194,11 +195,11 @@ function Header() {
             onChange={handleMenuChange}
           >
             {currentUser ? (
-              <img
+              <Image
                 className={cx("user-avatar")}
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNFNKRIlelCDL2fF-rzzxdy4vQVU6xMQ--OQ&usqp=CAU"
                 alt="avatar"
-              ></img>
+              ></Image>
             ) : (
               <button className={cx("more-btn")}>
                 <FontAwesomeIcon icon={faEllipsisVertical} />
